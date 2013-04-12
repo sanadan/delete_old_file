@@ -34,7 +34,7 @@ ls.force_encoding( 'utf-8' ) # 2.0.0-p0でus-asciiになってしまうパター
 ls = ls.split( "\n" )
 ls.delete_if { |x| x == "lost+found" }
 ls.each do |fn|
-  break if get_free( TARGET ) >= SPACE * 1024 * 1024
+  break if get_free( TARGET ) >= SPACE
   path = File.join( TARGET, fn )
   print "削除：#{path}\n"
   begin
